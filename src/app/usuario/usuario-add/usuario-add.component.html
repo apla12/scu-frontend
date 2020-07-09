@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="centraliza">
+        <div class="col-xs-6">
+            <div class="card" style="margin-top: 3em;">
+                <div class="card-header">
+                    Cadastrar Usuário
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="alert alert-info" role="alert" *ngIf="mensagem">
+                                    {{ mensagem  }}    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Nome</label>
+                            <input type="text" class="form-control" id="nome" formControlName="nome"
+                                placeholder="Seu nome">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Login</label>
+                            <input type="text" class="form-control" id="login" formControlName="login"
+                                placeholder="Seu Login">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Senha</label>
+                            <input type="password" class="form-control" id="senha" formControlName="senha"
+                                placeholder="Sua senha">
+                        </div>
+
+                        <button type="button" class="btn btn-danger" style="float:left;"
+                            (click)="listarUsuarios()">Cancelar</button>
+                        <button type="submit" class="btn btn-primary" style="float:right;" [disabled]="addForm.invalid">Cadastrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
